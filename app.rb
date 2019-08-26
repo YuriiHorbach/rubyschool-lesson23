@@ -16,12 +16,13 @@ post '/visit' do
 	@phone = params[:phone]
 	@datetime = params[:datetime]
 	@barber = params[:barber]
+	@color = params[:color]
 
 
 	# @message = "Dear #{@name}, we are glad that You are with us"
 
 	f = File.open "./public/user.txt", "a"
-	f.write "User: #{@name} Phone: #{@phone} Data and time: #{@datetime} Your barber will be: #{@barber} "
+	f.write "User: #{@name} Phone: #{@phone} Data and time: #{@datetime} Your barber will be: #{@barber} Your color: #{@color}"
 
 	erb :visit
 
@@ -49,3 +50,4 @@ end
 get '/contacts' do
 	erb :contacts
 end
+
